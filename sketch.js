@@ -71,12 +71,12 @@ function draw() {
   text("Distance: "+ distance,900,30);
   
   if(gameState===PLAY){
-    
+
    distance = distance + Math.round(getFrameRate()/50);
    path.velocityX = -(6 + 2*distance/150);
   
    mainCyclist.y = World.mouseY;
-  
+   mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
    edges= createEdgeSprites();
    mainCyclist .collide(edges);
   
@@ -180,7 +180,7 @@ function redCyclists(){
 function reset(){
   gameState = PLAY;
   gameOver.visible = false;
-  mainCyclist.addAnimation("Run=Animation",mainRacerImg1);
+  mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
   pinkCG.destroyEach();
   redCG.destroyEach();
   yellowCG.destroyEach();
